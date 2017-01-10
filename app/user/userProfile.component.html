@@ -1,0 +1,35 @@
+<div class="container" style="margin-top: 30px;">
+    <div class="container" style="width:500px;">
+        <form name="form" (ngSubmit)="updateProfile()">
+            <div class="form-signin">
+                <h2 class="form-signin-heading">Mi Perfil</h2>
+                <div>
+                    <label for="name" >Usuario</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="this.user.name" #name="ngModel" placeholder="Introduce tu usuario" maxlength="30">
+                </div><br>
+                <div>
+                    <label for="lastname" >Apellidos</label>
+                    <input type="text" class="form-control" name="lastname" [(ngModel)]="this.user.lastName" #lastname="ngModel" placeholder="Introduce tu apellido" >
+                </div><br>
+                <div>
+                    <label for="email" >Email</label>
+                    <input type="email" class="form-control" name="email" [(ngModel)]="this.user.email" #email="ngModel" placeholder="Introduce tu email">
+                </div><br>
+                <div>
+                    <label for="genre">Genero</label><br>
+                    <select name="genre" class="form-control" >
+                        <option value="male">Hombre</option>
+                        <option value="female">Mujer</option>
+                    </select>
+                </div><br>
+                <div>
+                    <label for="registerDate" >Fecha de registro</label>
+                    <div name="registerDate">{{this.user.signupDate | date: 'dd/MM/yyyy'}}</div>
+                </div><br><br>
+                <div>
+                    <button class="btn btn-lg btn-primary btn-block">Actualizar Perfil</button><br>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

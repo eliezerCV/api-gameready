@@ -1,0 +1,32 @@
+<style>
+.floating-box {
+    float: left;
+    width: 130px;
+    height: 100px;
+    margin: 10px;
+    margin-bottom: 50px;
+    border: 3px solid #182967;  
+}
+</style>
+<filter-category (getGamesByCategoryGame)="this.getGamesByGame()" (getGamesByCategoryPrototype)="this.getGamesByPrototype()"
+                (getGamesByMostPopular)="this.getGamesByPopular()" (getGamesByAproved)="this.getGamesByAproved()" (getGamesByRecent)="this.getGames()"
+    ></filter-category>
+<div class="container" style="margin-top: 50px;">
+    <div class="container" style="width:800px;">
+        <div *ngIf="this.displayGames">
+            
+            <h3>{{tittle}}</h3>
+           
+            <div *ngIf="this.tittle == 'Prototipo'">
+                <h3>Categoria Prototipo</h3>    
+            </div>
+            <div *ngFor="let game of games">
+                <div class="floating-box">
+                    <a [routerLink]="['/gamePosted',game._id]" (click)="ClickedGame(game._id)"><img src="app/styles/img/indiegame.jpg" alt='Name' height="100" width="130"></a>
+                    <h4><a [routerLink]="['/gamePosted',game._id]">{{game.title}} </a></h4>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!this.displayGames"> No se encontraron juegos publicados</div>
+    </div>
+</div>

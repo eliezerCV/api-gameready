@@ -1,0 +1,42 @@
+<style>
+.floating-box {
+    display: block;
+    width: 700px;
+    height: auto;
+    margin: 10px;
+    border: 1px solid #182967;  
+    background-color: #0C122E;
+}
+.floating-box-g:hover{
+    background-color: #0E163C;
+    cursor: pointer;
+}
+</style>
+
+<div class="container" style="width:800px;">
+    <div style="background-color: #0C122E;">
+        <img src="app/styles/img/indiegame.jpg" class="img-circle" height="100" width="110">
+        <h4 class="form-signin-heading"><strong>Nombre: </strong>{{this.user.name}} {{this.user.lastName}}</h4>
+        <h4 class="form-signin-heading"><strong>Miembro desde: </strong> {{this.user.signupDate | date:"dd/mm/yyyy"}}</h4>
+        <p>{{user.description}}</p> <br><br>
+    </div>
+    <div class="container">
+        <h2 class="form-signin-heading">Actividad Reciente</h2><br><br>
+        <h4 class="form-signin-heading">Juegos Publicados...</h4><br>
+        <div *ngFor="let games of userGames">
+            <div class="floating-box" [routerLink]="['/gamePosted',games._id]">
+                <div class="floating-box-g">
+                    <h4>{{games.title}} -- {{games.genre}} -- {{games.registerDate | date:"dd/mm/yyyy"}}</h4>
+                </div>
+            </div>
+        </div><br><br>
+        <h4 class="form-signin-heading">Comentarios Realizados...</h4><br>
+        <div *ngFor="let com of userComments">
+            <div class="floating-box" >
+                <p><a [routerLink]="['/gamePosted',com.idPublication]">{{com.idPublication}} : </a> </p>
+                <p >{{com.dateComment | date:"dd/mm/yyyy - HH:mm"}}</p>
+                <p >{{com.content}}</p>
+            </div>
+        </div>
+    </div>
+</div>

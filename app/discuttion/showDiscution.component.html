@@ -1,0 +1,32 @@
+<style>
+    .head-discution{
+        display: block;
+        width: 700px;
+        height: 100px;
+        margin: 10px;
+        border: 1px solid #182967;  
+        background-color: #0C122E;
+    }
+    .tittle-date{
+       float: right;
+    }
+    .tittle-d{
+        font-size: 20px;
+    }
+    .comments{
+        align-items: center;
+    }
+    
+</style>
+
+<div class="container" style="width:800px;">
+    <div class="head-discution">
+        <p><a [routerLink]="['/publicUser',this.discution.author]">{{this.discution.author}}</a></p>
+        <p class="tittle-date">{{this.discution.registerDate | date:"dd/mm/yyyy - HH:mm"}}</p>
+        <p class="tittle-d">{{this.discution.title}}</p>
+        <p>{{this.discution.description}}</p>
+    </div>
+</div><br>
+<div class="comments">
+    <comment-container [idPublication]="this.discution._id"></comment-container>
+</div>

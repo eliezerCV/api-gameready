@@ -1,0 +1,39 @@
+<style>
+.floating-box {
+    display: block;
+    width: 700px;
+    height: 65px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #182967;  
+    background-color: #0C122E;
+}
+.floating-box:hover{
+    background-color: #0E163C;
+    cursor: pointer;
+}
+
+.floating-box p{
+    float: right;
+}
+</style>
+
+<div class="container" style="width:800px;">
+    <h3 class="form-signin-heading">Bienvenido a las Discuciones de GameReady</h3><br>
+    <p>
+        <b>¡Todo el mundo está invitado!</b> ¡Las discusiones de Game Ready son para todos, tanto para los nuevos usuarios como para los más veteranos!
+    </p>
+    <p>
+        <b>¡No empieces peleas sin sentido! </b>Si alguien ha tenido un comportamiento que es perjudicial para el foro (spam, molestar a usuarios, etc.), 
+        contacta con uno de los moderadores o denuncia el mensaje. Enfrentarse al usuario ofensivo no hará sino agravar el problema. No se tolera el acoso.
+    </p><br>
+    <button [routerLink]="['/newDiscution']"> Nueva Discucion</button>
+        <div *ngFor="let dis of this.discutions">
+             <div class="floating-box" [routerLink]="['/showDiscution',dis._id]">
+                <h4>{{dis.title}}</h4>
+                <h6>{{dis.description}}</h6>
+                <p>{{dis.registerDate | date: "dd/mm/yyyy-MM:hh"}}</p>
+            </div>
+        </div>
+    <div *ngIf="!this.discutions"> No se encontraron discuciones Creadas</div>
+</div>

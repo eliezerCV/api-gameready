@@ -1,0 +1,13 @@
+<div *ngIf="this.isCurrentUser">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li><a [routerLink]="['/userProfile']">Mi Perfil</a></li>
+          <li><a [routerLink]="['/userAccount']">Mi Cuenta</a></li>
+          <li><a [routerLink]="['/userGames']">Juegos Publicados</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

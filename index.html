@@ -1,0 +1,30 @@
+<html>
+
+    <head>
+        <base href="/">
+        <title>App con angular2 </title>
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"> </script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <script src="systemjs.config.js"></script>
+        <script src="node_modules/angular2/bundles/http.dev.js"></script>
+        <script src="node_modules/angular2/bundles/router.dev.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+        <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
+         <!--<script src="https://code.angularjs.org/2.0.0-beta.0/angular2.dev.js"></script>-->
+        <script>
+            System.import('app').catch(function(err)
+            { console.error(err); });
+        </script>
+            <link href="app/styles/css/bootstrap.min.css" rel="stylesheet">
+            <link href="app/styles/css/style.min.css" rel="stylesheet">
+            <link href="app/styles/css/home.css" rel="stylesheet">
+            <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+    </head>
+
+    <body style="background-color: #0A0F27">
+        <mi-app> </mi-app>
+    </body>
+</html>

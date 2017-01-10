@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" style="margin-top: 65px; background-color: #0A0F27">
+            <ul class="nav nav-sidebar">
+                <li><a (click)="this.filterByRecent()">Juegos Recientes</a></li>
+                <li><a (click)="this.filterByPopular()">Los Mas Populares</a></li>
+                <li><a (click)="this.filterByGame()">Categoria Juego</a></li>
+                <li><a (click)="this.filterByPrototype()">Categoria Prototipo</a></li>
+                <li><a [routerLink]="['/discutions']">Discuciones</a></li>
+                <li><a (click)="this.filterByAproved()">Juegos Aprovados</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

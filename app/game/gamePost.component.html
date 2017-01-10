@@ -1,0 +1,43 @@
+<div class="container" style="margin-top: 30px;">
+    <div class="container" style="width:500px;">
+        <form name="form" (ngSubmit)="saveGame()">
+            <div class="form-signin">
+                <h2 class="form-signin-heading">Crear Publicacion</h2><br>
+                <div>
+                    <label for="title" >Titulo</label>
+                    <input type="text" class="form-control" name="title" [(ngModel)]="this.game.title" #title="ngModel" placeholder="Titulo del juego" required >
+                </div><br>
+                <div>
+                    <label for="genre" >Genero</label>
+                    <input type="text" class="form-control" name="genre" [(ngModel)]="this.game.genre" #genre="ngModel" placeholder="Genero del juego: Accion, plataformas etc" required>
+                </div><br>
+                <div>
+                    <label for="platforms" >Plataformas </label>
+                    <input type="text" class="form-control" name="platforms" [(ngModel)]="this.game.platforms" #platforms="ngModel" placeholder="PC, Mac, Linux" required>
+                </div><br>
+               <div>
+                    <label for="languages" >Idiomas</label>
+                    <input type="text" class="form-control" name="languages" [(ngModel)]="this.game.languages" #languages="ngModel" placeholder="Idiaomas en que estara disponible" required >
+                </div><br>
+                <div>
+                    <label for="category">Categoria</label>
+                    <select name="category" class="form-control" [(ngModel)]="this.game.category" #category="ngModel">
+                        <option value="game">Juego</option>
+                        <option value="prototype">Prototipo</option>
+                    </select>
+                </div><br>
+                <div>
+                    <label for="players" >Players</label>
+                    <input type="text" class="form-control" name="players" [(ngModel)]="this.game.players" #players="ngModel" placeholder="singleplayer, multiplayer, coop, etc" required>
+                </div><br>
+                <div class="form-group">
+                    <label for="description">Descripcion</label>
+                    <textarea class="form-control" rows="5" name="description" [(ngModel)]="this.game.description" #description="ngModel" placeholder="se libre de extenderte tanto como quieras" required></textarea>
+                </div><br>
+                <div>
+                    <button class="btn btn-lg btn-primary btn-block">Publicar Juego</button><br>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

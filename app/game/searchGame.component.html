@@ -1,0 +1,34 @@
+<style>
+    .elem{
+        position: absolute;
+        z-index: 1;
+    }
+    .elem a{
+        display: block;
+        background-color: #313350;
+        width: 300px;
+        height:60px;
+        border-color: #131D8D;
+        text-align: center;
+    }
+    .elem a img{
+        left: 0;
+        right: 0;
+    }
+</style>
+
+<div *ngIf="this._router.url === '/home'">
+    <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" name="searchContent" (ngModelChange)="this.sendSearch($event)" [(ngModel)]="this.search.searchContent" #searchContent="ngModel" placeholder="Buscar">
+            <div *ngIf="this.games">
+                <div *ngFor="let game of this.foundGames">
+                    <div class="elem">
+                        <a href="#"><img src="app/styles/img/indiegame.jpg"  height="60" width="80">{{game.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default">Buscar</button>
+    </form>
+</div>

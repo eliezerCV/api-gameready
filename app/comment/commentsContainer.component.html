@@ -1,0 +1,25 @@
+<style>
+.floating-box {
+    display: block;
+    width: 700px;
+    height: 65px;
+    margin: 10px;
+    border: 1px solid #182967;  
+    background-color: #0C122E;
+}
+
+</style>
+
+<div class="container">
+    <h2 class="form-signin-heading">Comentarios</h2><br>
+    <ul *ngFor="let comment of comments">
+        <div class="floating-box">
+            <a [routerLink]="['/publicUser',comment.author]">{{comment.author}} </a>
+            <p>{{comment.dateConmment | date: "dd/MM/yyyy - HH:mm"}}</p>
+            <p>{{comment.content}}</p>
+        </div>
+    </ul>
+</div>
+<div>
+    <new-comment [idPublication]="this.idPublication" (getComments)="getComments($event)"></new-comment>
+</div>

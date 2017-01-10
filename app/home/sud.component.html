@@ -1,0 +1,22 @@
+
+<nav class="nav navbar-nav navbar-right">
+    <div *ngIf="this.isLogged">
+        <div class="dropdown">
+            <button class="dropbtn">Bienvenido {{this.user.name}}</button>
+            <div class="dropdown-content">
+                <a [routerLink]="['/userProfile']">Perfil</a>
+                <a [routerLink]="['/userAccount']">Cuenta</a>
+                <a [routerLink]="['/gamePost']">Publicar Juego</a>
+                <a (click)="logout()">Cerrar Sesion</a>
+            </div>
+        </div>
+    </div>
+   <div *ngIf="!this.isLogged">
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="navbar-brand" [routerLink]="['/userLogin']">Iniciar Sesion</a></li>
+                <li><a class="navbar-brand" [routerLink]="['/userRegister']">Registrarme</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

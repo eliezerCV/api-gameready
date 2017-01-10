@@ -1,0 +1,25 @@
+<div class="container" style="width: 800px;">
+    
+    <h2 class="form-signin-heading">Bienvenido al soporte de Game Ready</h2><br><br>
+    
+    <div *ngIf="this.emptyData" style="width: 500px">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button (click)="this.alertQuit()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Error!</strong> Escribe tu pregunta
+        </div>
+    </div>
+    <div *ngIf="this.sendMessage" style="width: 500px">
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button (click)="this.succesQuit()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Enviado!</strong> Gracias por tu paciencia, trataremos de responderte en cuanto nos sea posible
+        </div>
+    </div>
+    <div >
+        <h4 class="form-signin-heading">En que te podemos ayudar?</h4>
+        <label for="title">Titulo</label>
+        <input type="text" name="tittle" class="form-control" [(ngModel)]="this.discution.tittle" #tittle="ngModel">
+        <label for="content">Descipcion</label>
+        <textarea name="content" rows="5" class="form-control" [(ngModel)]="this.discution.description"  #description="ngModel"></textarea><br><br>
+        <button class="btn btn-lg btn-primary btn-block" (click)="sendDiscution()" style="width: 500px; height: 60px;">Enviar</button>
+    </div>
+</div>

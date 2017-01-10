@@ -1,0 +1,17 @@
+<div class="container" >
+    <div *ngIf="this.isLogged">
+        <h4>Agregar Nuevo Comentario</h4><br>
+        <div *ngIf="this.alert" style="width: 500px;">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button (click)="this.alertQuit()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Error!</strong> Escribe tu comentario
+                </div>
+            </div>
+        <textarea name="newComment" cols="100" rows="5" placeholder="agrega tu comentario" [(ngModel)]="this.comment" #newComment="ngModel" required></textarea><br><br>
+        <button (click)="addNewComment()" class="btn btn-lg btn-primary btn-block" style="width:500px;">Enviar</button>
+    </div>
+
+    <div *ngIf="!this.isLogged">
+        <h4> <a [routerLink]="['/userLogin']">Inicia sesion</a> para comentar</h4><br>
+    </div>
+</div><br><br>
